@@ -72,6 +72,18 @@ void delete(int key){
     }
 }
 
+void update(int oldKey, int newKey)
+{
+    int index = search(oldKey);
+
+    if(index != -1)
+    {
+        table[index] = newKey;
+    }else{
+        printf("Value to be updated not found");
+    }
+}
+
 void display(){
     for(int i =0 ;i < 10; i++){
         if(table[i] != __INT_MAX__){
@@ -101,6 +113,10 @@ int main(){
     delete(30);
     printf("After Deletion: ");
     display();
+    update(10,5);
+    printf("After Updation:");
+    display();
+
 
     return 0;
 }
